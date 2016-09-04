@@ -1,5 +1,6 @@
 .demo {
-  display: block;
+  display: flex;
+  position: relative;
   &:after {
     content: '+';
   }
