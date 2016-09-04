@@ -1,0 +1,6 @@
+.demo {
+  display: block;
+  &:after {
+    content: '+';
+  }
+}

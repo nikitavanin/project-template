@@ -19,6 +19,12 @@
   "homepage": "https://github.com/nikitavanin/project-template#readme",
   "devDependencies": {
     "bower": "^1.7.9",
-    "gulp": "^3.9.1"
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-if": "^2.0.1",
+    "gulp-sass": "^2.3.2"
+  },
+  "dependencies": {
+    "gulp-sourcemaps": "^1.6.0"
   }
 }
