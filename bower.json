@@ -1,0 +1,15 @@
+{
+  "name": "project-template",
+  "description": "",
+  "main": "index.js",
+  "authors": [],
+  "license": "ISC",
+  "homepage": "https://github.com/nikitavanin/project-template",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
