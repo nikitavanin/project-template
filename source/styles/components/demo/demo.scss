@@ -1,6 +1,7 @@
 .demo {
   display: flex;
   position: relative;
+  box-shadow: 0 0 0 0 #ccc;
   &:after {
     content: '+';
   }
