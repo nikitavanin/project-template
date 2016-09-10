@@ -1,0 +1,70 @@
+.templates-navigation {
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 315px;
+  height: 100vh;
+  padding: 30px;
+  font-family: Tahoma, sans-serif;
+  color: #fff;
+  background: rgba(33, 101, 185, 0.8);
+
+  &__title {
+    margin: 0 0 20px 0;
+    font-size: 24px;
+  }
+
+  &__list-1 {
+    min-height: calc(100% - 78px);
+  }
+
+  &__list-2 {
+    margin: 0 0 0 15px;
+  }
+
+  &__item-1 {
+    margin: 10px 0 0;
+    &:first-child {
+      margin: 0;
+    }
+  }
+
+  &__item-2 {
+    margin: 5px 0 0;
+  }
+
+  &__link {
+    font-family: Helvetica, sans-serif;
+    text-decoration: none;
+    color: #fff;
+  }
+
+  &__hide {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 15px;
+    height: 100%;
+    background: rgba(59,99,150,0.8);
+    cursor: pointer;
+    transition: 300ms ease-in-out;
+    &:hover {
+      background: rgba(48, 86, 134, 0.8);
+    }
+  }
+
+  &__questions {
+    font-size: 14px;
+    text-align: center;
+  }
+
+  &__mail {
+    display: block;
+    margin: 5px 0 0;
+    font-size: 14px;
+    text-align: center;
+    color: #fff;
+  }
+
+}
