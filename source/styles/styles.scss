@@ -1,1 +1,8 @@
-@import 'components/demo/demo.scss';
+// Глобальные стили
+@import 'variables.scss';
+@import 'mixins.scss';
+@import 'global.scss';
+@import 'print.scss';
+
+// Стили компонентов (БЭМ-блоков)
+@import '../components/demo-block/demo-block.scss';
