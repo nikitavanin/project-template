@@ -7,18 +7,19 @@ const gulpIf = require('gulp-if');
 const del = require('del');
 const autoprefixer = require('gulp-autoprefixer');
 const fileinclude = require('gulp-file-include');
+const browserSync = require('browser-sync').create();
 
 const isDevelopment = !process.env.NODE_ENV || process.env.NODE_ENV == 'development';
 
 gulp.task('styles', function() {
 
-  if (isDevelopment) {
-    console.log('**DEVELOPMENT**')
-  } else {
-    console.log('**PRODUCTION**');
-  }
+  // if (isDevelopment) {
+  //   console.log('**DEVELOPMENT**')
+  // } else {
+  //   console.log('**PRODUCTION**');
+  // }
 
-  return gulp.src('source/styles/styles.scss', {base: 'source'})
+  return gulp.src('source/styles/styles.scss')
     .pipe(gulpIf(isDevelopment, sourcemaps.init()))
     .pipe(sass())
     .pipe(autoprefixer())
@@ -53,11 +54,23 @@ gulp.task('clean', function() {
   return del(['build/*', '!build/README.md']);
 });
 
-gulp.task('build', gulp.series('clean', 'styles'));
+gulp.task('serve', function() {
 
-gulp.task('watch', function() {
-  gulp.watch('source/styles/components/*/*.scss', gulp.series('styles'));
-  //смотреть изменения html
+  browserSync.init({
+    server: 'build',
+    open: false
+  });
+
+  browserSync.watch('build/**/*.*').on('change', browserSync.reload);
 });
 
-gulp.task('develop', gulp.series('build', 'watch'));
+gulp.task('build', gulp.series('clean', 'styles', 'html'));
+
+gulp.task('watch', function() {
+  gulp.watch('source/**/*.scss', gulp.series('styles'));
+  gulp.watch('source/**/*.html', gulp.series('html'));
+});
+
+gulp.task('develop',
+  gulp.series('build', gulp.parallel('watch', 'serve'))
+);

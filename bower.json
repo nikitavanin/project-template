@@ -5,11 +5,15 @@
   "authors": [],
   "license": "ISC",
   "homepage": "https://github.com/nikitavanin/project-template",
+  "directory" : "source/styles/libraries/",
   "ignore": [
     "**/.*",
     "node_modules",
     "bower_components",
     "test",
     "tests"
-  ]
+  ],
+  "dependencies": {
+    "reset-css": "^2.0.2011012603"
+  }
 }
