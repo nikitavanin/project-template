@@ -1,3 +1,5 @@
-(function(){
-  console.log('test');
-}());
+ready(function(){
+  (function(){
+    console.log('test');
+  }());
+});

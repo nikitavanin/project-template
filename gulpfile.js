@@ -127,6 +127,9 @@ function getComponentsFiles() {
 
   });
 
+  //добавим в начало массива компонентов глобальный файл js
+  componentsFiles.js.unshift('source/scripts/scripts.js');
+
   return componentsFiles;
 
 }
