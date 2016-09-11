@@ -9,6 +9,7 @@
   font-family: Tahoma, sans-serif;
   color: #fff;
   background: rgba(33, 101, 185, 0.8);
+  visibility: hidden;
 
   &__title {
     margin: 0 0 30px 0;
@@ -16,7 +17,7 @@
   }
 
   &__list-1 {
-    min-height: calc(100% - 78px);
+    min-height: calc(100% - 88px);
   }
 
   &__list-2 {
@@ -40,7 +41,7 @@
     color: #fff;
   }
 
-  &__hide {
+  &__toggle {
     position: absolute;
     top: 0;
     right: 0;
@@ -65,6 +66,20 @@
     font-size: 14px;
     text-align: center;
     color: #fff;
+  }
+
+  &_transition {
+    transition: 300ms ease-in-out;
+  }
+
+  &_visible {
+    visibility: visible;
+    transform: translate3d(0, 0, 0);
+  }
+
+  &_hidden {
+    visibility: visible;
+    transform: translate3d(-300px, 0, 0);
   }
 
 }

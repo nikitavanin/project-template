@@ -29,7 +29,8 @@ gulp.task('styles', function() {
 
   return gulp.src('source/styles/styles.scss')
     .pipe(gulpIf(isDevelopment, sourcemaps.init()))
-    .pipe(sass({outputStyle: 'compressed'}))
+    .pipe(gulpIf(!isDevelopment, sass({outputStyle: 'compressed'})))
+    .pipe(gulpIf(isDevelopment, sass()))
     .pipe(autoprefixer())
     .pipe(rename('styles.min.css'))
     .pipe(gulpIf(isDevelopment, sourcemaps.write('.')))
