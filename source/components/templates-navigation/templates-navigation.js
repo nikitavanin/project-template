@@ -8,7 +8,7 @@ ready(function(){
     // проверка на текущий шаблон
     Array.prototype.forEach.call(templatesNavigationLink, function(el, i) {
       if (el.getAttribute('href') == currentUrlPath) {
-        el.classList.add('templates-navigation__link_current')
+        el.classList.add('templates-navigation__link_current');
         return;
       }
     });
