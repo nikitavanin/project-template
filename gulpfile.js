@@ -104,6 +104,9 @@ function getComponentsFiles() {
     js: [],
   }
 
+  //добавим в начало массива компонентов глобальный файл js
+  componentsFiles.js.push('source/scripts/scripts.js');
+
   let connectManager = fs.readFileSync('source/styles/styles.scss', 'utf-8');
 
   let fileSystem = connectManager.split('\n').filter(function(item) {
@@ -128,15 +131,17 @@ function getComponentsFiles() {
 
   });
 
-  //добавим в начало массива компонентов глобальный файл js
-  componentsFiles.js.unshift('source/scripts/scripts.js');
-
   return componentsFiles;
 
 }
 
+
 //проверка на существование файла
 function isFileExist(path) {
-  if (fs.statSync(path).size > 1) return true;
-  return false;
+  try {
+    fs.statSync(path);
+    return true;
+  } catch(err) {
+    return !(err && err.code === 'ENOENT');
+  }
 }

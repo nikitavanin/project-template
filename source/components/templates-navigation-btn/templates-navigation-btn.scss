@@ -1,0 +1,80 @@
+.templates-navigation-btn {
+  position: fixed;
+  top: 17px;
+  left: 20px;
+  z-index: 3000;
+  display: block;
+  width: 32px;
+  height: 32px;
+  background: #3f71c3;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 300ms ease-in-out;
+
+  &:hover {
+    background: #3c6cbb;
+  }
+
+  &__elem {
+    position: absolute;
+    background: #fff;
+    transition: 150ms ease-in-out;
+  }
+
+  &_arrow {
+
+    .templates-navigation-btn__elem {
+      left: 10px;
+      width: 10px;
+      height: 2px;
+    }
+
+    .templates-navigation-btn__elem_elem-1 {
+      top: 15px;
+      transform: rotate(-38deg);
+      transform-origin: left;
+    }
+
+    .templates-navigation-btn__elem_elem-2 {
+      top: 15px;
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .templates-navigation-btn__elem_elem-3 {
+      top: 15px;
+      transform: rotate(38deg);
+      transform-origin: left;
+    }
+
+  }
+
+  &_hamburger {
+
+    .templates-navigation-btn__elem {
+      left: 7px;
+      width: 18px;
+      height: 2px;
+    }
+
+    .templates-navigation-btn__elem_elem-1 {
+      top: 8px;
+      transform: rotate(0);
+      transform-origin: left;
+    }
+
+    .templates-navigation-btn__elem_elem-2 {
+      top: 15px;
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .templates-navigation-btn__elem_elem-3 {
+      top: 22px;
+      transform: rotate(0);
+      transform-origin: left;
+    }
+
+  }
+
+}
