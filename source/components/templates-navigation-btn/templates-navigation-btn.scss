@@ -9,6 +9,7 @@
   background: #3f71c3;
   border-radius: 5px;
   cursor: pointer;
+  opacity: 0;
   transition: 300ms ease-in-out;
 
   &:hover {
@@ -18,20 +19,25 @@
   &__elem {
     position: absolute;
     background: #fff;
-    transition: 150ms ease-in-out;
+
+    &_transition {
+      transition: 200ms ease;
+    }
+
   }
 
   &_arrow {
+    opacity: 1;
 
     .templates-navigation-btn__elem {
-      left: 10px;
+      left: 11px;
       width: 10px;
       height: 2px;
     }
 
     .templates-navigation-btn__elem_elem-1 {
       top: 15px;
-      transform: rotate(-38deg);
+      transform: rotate3d(0, 0, 1, -38deg);
       transform-origin: left;
     }
 
@@ -43,13 +49,14 @@
 
     .templates-navigation-btn__elem_elem-3 {
       top: 15px;
-      transform: rotate(38deg);
+      transform: rotate3d(0, 0, 1, 38deg);
       transform-origin: left;
     }
 
   }
 
   &_hamburger {
+    opacity: 1;
 
     .templates-navigation-btn__elem {
       left: 7px;
@@ -59,7 +66,7 @@
 
     .templates-navigation-btn__elem_elem-1 {
       top: 8px;
-      transform: rotate(0);
+      transform: rotate3d(0, 0, 0, 0);
       transform-origin: left;
     }
 
@@ -71,7 +78,7 @@
 
     .templates-navigation-btn__elem_elem-3 {
       top: 22px;
-      transform: rotate(0);
+      transform: rotate3d(0, 0, 0, 0);
       transform-origin: left;
     }
 

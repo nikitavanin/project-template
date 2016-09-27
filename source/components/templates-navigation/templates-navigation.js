@@ -12,11 +12,19 @@ Array.prototype.forEach.call(templatesNavigationLink, function(el, i) {
 });
 
 // проверка состояния панели навигации
-if (
-    localStorage.getItem('templates-navigation') == 'templates-navigation_visible'
-    || localStorage.getItem('templates-navigation') == null
+function isTemplateNavigationVisible() {
+  if (
+      localStorage.getItem('templates-navigation') == 'templates-navigation_visible'
+      || localStorage.getItem('templates-navigation') == null
   ) {
+    return true;
+  } else if ( localStorage.getItem('templates-navigation') == 'templates-navigation_hidden' ) {
+    return false;
+  }
+}
+
+if ( isTemplateNavigationVisible() ) {
   templatesNavigation[0].classList.add('templates-navigation_visible');
-} else if (localStorage.getItem('templates-navigation') == 'templates-navigation_hidden') {
+} else {
   templatesNavigation[0].classList.add('templates-navigation_hidden');
 }
