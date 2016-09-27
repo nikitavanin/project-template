@@ -18,13 +18,9 @@
   }
 
   &_hidden {
-    opacity: 0;
+    opacity: 1;
     visibility: visible;
     transform: translate3d(-300px, 0, 0);
-
-    &:hover {
-      opacity: 1;
-    }
 
   }
 
